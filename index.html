@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meseret Haileyesus — Economic Justice Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0FA3B1;
+    --teal-deep: #0b8a96;
+    --teal-light: #18bfcf;
+    --teal-pale: #cdf0f4;
+    --dark: #0d1a1a;
+    --charcoal: #1c2b2b;
+    --warm-white: #f8f4ef;
+    --cream: #f2ede6;
+    --gold: #c9a84c;
+    --gold-light: #e8c87a;
+    --text-dark: #1a2424;
+    --text-mid: #3d5454;
+    --text-light: #7a9494;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 4rem;
+    background: rgba(13, 26, 26, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    transition: all 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm-white);
+    line-height: 1.3;
+  }
+
+  .nav-logo span { color: var(--gold); display: block; font-weight: 300; letter-spacing: 0.22em; font-size: 0.7rem; }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(248,244,239,0.75);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    color: var(--dark) !important;
+  }
+
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 60%, var(--teal-light) 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231a7a78' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  .hero-text {
+    padding: 6rem 4rem 6rem 6rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1s ease forwards;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(248,244,239,0.6);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    color: var(--warm-white);
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-title .accent { color: var(--gold); }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: rgba(248,244,239,0.75);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 2.8rem;
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 1rem 2.2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+    border-radius: 2px;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--warm-white);
+    border: 1px solid rgba(248,244,239,0.4);
+    padding: 1rem 2.2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s;
+    border-radius: 2px;
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  .hero-image {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-img-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    mix-blend-mode: luminosity;
+    filter: contrast(1.08) brightness(1.02);
+  }
+
+  .hero-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(13,26,26,0.55) 0%, transparent 60%);
+    z-index: 1;
+  }
+
+  .hero-img-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(transparent, rgba(13,26,26,0.7));
+    z-index: 1;
+  }
+
+  .gold-line {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* ── SECTION BASE ── */
+  section { position: relative; }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  /* ── ORIGIN ── */
+  #origin {
+    background: var(--cream);
+    padding: 8rem 0;
+  }
+
+  .origin-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .origin-left h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--teal-deep);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .origin-left .gold-bar {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  .origin-left blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-mid);
+    line-height: 1.7;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  .origin-right p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--text-mid);
+    margin-bottom: 1.4rem;
+    font-weight: 300;
+  }
+
+  .origin-right p strong {
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+
+  /* ── IMPACT NUMBERS ── */
+  #impact {
+    background: var(--teal-deep);
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #impact::before {
+    content: 'IMPACT';
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18rem;
+    color: rgba(255,255,255,0.02);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .impact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    text-align: center;
+  }
+
+  .impact-inner .section-label { color: var(--gold-light); }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-top: 3rem;
+  }
+
+  .stat-item {
+    padding: 3rem 1.5rem;
+    background: var(--teal-deep);
+    text-align: center;
+    transition: background 0.3s;
+  }
+
+  .stat-item:hover { background: var(--teal); }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(248,244,239,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ── RECOGNITION ── */
+  #recognition {
+    background: var(--warm-white);
+    padding: 4rem 0;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .recognition-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    text-align: center;
+  }
+
+  .recognition-inner p {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+  }
+
+  .logos-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .logo-badge {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-mid);
+    padding: 0.6rem 1.4rem;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 2px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+
+  .logo-badge:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* ── MANIFESTO ── */
+  #manifesto {
+    background: var(--teal-deep);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #manifesto::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  }
+
+  .manifesto-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .manifesto-inner .section-label { color: var(--gold-light); }
+
+  .manifesto-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--warm-white);
+    font-weight: 300;
+    margin-bottom: 3.5rem;
+    font-style: italic;
+  }
+
+  .manifesto-statements {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .manifesto-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(248,244,239,0.1);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .manifesto-item:last-child { border-bottom: none; }
+
+  .manifesto-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    opacity: 0.4;
+    min-width: 50px;
+  }
+
+  .manifesto-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--warm-white);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .manifesto-text em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  /* ── SERVICES / HOW MESI HELPS ── */
+  #services {
+    background: var(--cream);
+    padding: 8rem 0;
+  }
+
+  .services-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    align-items: end;
+  }
+
+  .services-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--teal-deep);
+    line-height: 1;
+  }
+
+  .services-header p {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    max-width: 500px;
+    font-weight: 300;
+  }
+
+  .services-tracks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(0,0,0,0.06);
+  }
+
+  .track {
+    background: var(--warm-white);
+    padding: 2.8rem 2.5rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .track::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .track:hover::before { transform: scaleX(1); }
+  .track:hover { background: var(--dark); }
+  .track:hover .track-title, .track:hover .track-desc, .track:hover .track-item { color: rgba(248,244,239,0.8) !important; }
+  .track:hover .track-icon { color: var(--gold); }
+
+  .track-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    color: var(--teal);
+    transition: color 0.3s;
+  }
+
+  .track-for {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+  }
+
+  .track-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    transition: color 0.3s;
+  }
+
+  .track-desc {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s;
+    font-weight: 300;
+  }
+
+  .track-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .track-item {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    transition: color 0.3s;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .track-item::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.7rem;
+  }
+
+  /* ── COACHING BOOKING ── */
+  #coaching {
+    background: var(--teal-deep);
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #coaching::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--gold), var(--teal));
+  }
+
+  .coaching-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .coaching-left .section-label { color: var(--gold-light); }
+
+  .coaching-left h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2rem;
+    color: var(--warm-white);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .coaching-left p {
+    color: rgba(248,244,239,0.65);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .coaching-packages {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .package {
+    background: var(--teal);
+    padding: 1.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .package:hover { background: rgba(26,122,120,0.3); }
+
+  .package-info { flex: 1; }
+
+  .package-name {
+    font-weight: 600;
+    color: var(--warm-white);
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .package-desc {
+    font-size: 0.78rem;
+    color: rgba(248,244,239,0.45);
+    font-weight: 300;
+  }
+
+  .package-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-left: 2rem;
+    white-space: nowrap;
+  }
+
+  /* Booking Form */
+  .booking-form {
+    background: rgba(248,244,239,0.04);
+    border: 1px solid rgba(248,244,239,0.1);
+    padding: 2.5rem;
+    border-radius: 4px;
+  }
+
+  .booking-form h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--warm-white);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+  }
+
+  .booking-form > p {
+    font-size: 0.8rem;
+    color: rgba(248,244,239,0.4);
+    margin-bottom: 2rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-group label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(248,244,239,0.45);
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--warm-white);
+    padding: 0.8rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--gold); }
+
+  .form-group select { cursor: pointer; }
+
+  .form-group select option { background: var(--charcoal); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.25s;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: var(--gold-light); }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials {
+    background: var(--warm-white);
+    padding: 8rem 0;
+  }
+
+  .testimonials-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    text-align: center;
+  }
+
+  .testimonials-inner h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--teal-deep);
+    margin-bottom: 1rem;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(0,0,0,0.06);
+    margin-top: 4rem;
+  }
+
+  .testimonial-card {
+    background: var(--cream);
+    padding: 3rem 2.5rem;
+    text-align: left;
+    transition: background 0.3s;
+  }
+
+  .testimonial-card:hover { background: var(--dark); }
+
+  .testimonial-card:hover .t-quote,
+  .testimonial-card:hover .t-name,
+  .testimonial-card:hover .t-title { color: rgba(248,244,239,0.8) !important; }
+
+  .t-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: -1rem;
+    display: block;
+  }
+
+  .t-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+  }
+
+  .t-divider {
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 1.2rem;
+  }
+
+  .t-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+    transition: color 0.3s;
+  }
+
+  .t-title {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    transition: color 0.3s;
+    font-weight: 300;
+  }
+
+  /* ── GALLERY ── */
+  #gallery {
+    background: var(--teal-deep);
+    padding: 8rem 0;
+  }
+
+  .gallery-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .gallery-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--warm-white);
+    line-height: 1;
+  }
+
+  .gallery-header .section-label { color: var(--gold-light); }
+
+  .gallery-header a {
+    color: rgba(248,244,239,0.5);
+    font-size: 0.75rem;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(248,244,239,0.2);
+    padding-bottom: 2px;
+    transition: all 0.2s;
+  }
+
+  .gallery-header a:hover { color: var(--gold); border-color: var(--gold); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 220px;
+    gap: 4px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--teal-deep);
+  }
+
+  .gallery-item:first-child {
+    grid-row: 1 / 3;
+    background: linear-gradient(135deg, var(--teal-deep), var(--dark));
+  }
+
+  .gallery-item .gallery-img-ph {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, var(--teal-deep) 0%, var(--charcoal) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+  }
+
+  .gallery-item:hover .gallery-img-ph { transform: scale(1.05); }
+
+  .gallery-item .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,26,26,0.85) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+  }
+
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+  .gallery-caption {
+    font-size: 0.8rem;
+    color: var(--warm-white);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .gallery-caption span {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .gallery-ph-text {
+    font-family: 'Cormorant Garamond', serif;
+    color: rgba(248,244,239,0.2);
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  /* ── PRESS ── */
+  #press {
+    background: var(--cream);
+    padding: 8rem 0;
+  }
+
+  .press-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .press-header { text-align: center; margin-bottom: 4rem; }
+
+  .press-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    color: var(--teal-deep);
+  }
+
+  .press-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: rgba(0,0,0,0.06);
+  }
+
+  .press-card {
+    background: var(--warm-white);
+    padding: 2.5rem;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+  }
+
+  .press-card:hover { background: var(--dark); }
+  .press-card:hover .press-outlet, .press-card:hover .press-headline { color: rgba(248,244,239,0.8) !important; }
+
+  .press-outlet {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+  }
+
+  .press-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s;
+    font-weight: 600;
+  }
+
+  .press-link {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ── CLOSING CTA ── */
+  #cta {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--charcoal) 50%, var(--teal-deep) 100%);
+    padding: 10rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.1);
+    pointer-events: none;
+  }
+
+  #cta::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.06);
+    pointer-events: none;
+  }
+
+  .cta-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .cta-inner .section-label { color: var(--gold-light); justify-content: center; display: block; }
+
+  .cta-inner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--warm-white);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .cta-inner p {
+    color: rgba(248,244,239,0.6);
+    font-size: 1rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 3rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080f0f;
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand .nav-logo {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .footer-brand p {
+    color: rgba(248,244,239,0.35);
+    font-size: 0.82rem;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 260px;
+  }
+
+  .footer-col h4 {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+  }
+
+  .footer-col a {
+    display: block;
+    color: rgba(248,244,239,0.4);
+    text-decoration: none;
+    font-size: 0.82rem;
+    margin-bottom: 0.6rem;
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+
+  .footer-col a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 4rem 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.72rem;
+    color: rgba(248,244,239,0.2);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--teal);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+
+  .toast.show { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 8rem 2rem 3rem; }
+    .hero-image { height: 400px; }
+    .origin-inner, .coaching-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .services-tracks, .testimonials-grid, .press-grid { grid-template-columns: 1fr; }
+    .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:first-child { grid-row: auto; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    section { padding: 5rem 0; }
+    .origin-inner, .services-inner, .coaching-inner, .testimonials-inner, .gallery-inner, .press-inner { padding: 0 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    Meseret Haileyesus
+    <span>Economic Justice Architect</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#origin">About</a></li>
+    <li><a href="#services">Work</a></li>
+    <li><a href="#coaching">Coaching</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#coaching" class="nav-cta">Book Mesi</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Economic Justice Architect</p>
+    <p class="hero-name">Meseret Haileyesus</p>
+    <h1 class="hero-title">Economic<br>Justice<br><span class="accent">Architect.</span></h1>
+    <p class="hero-tagline">Bringing clarity, strategy, and humanity to the policies that determine women's economic futures.</p>
+    <div class="hero-buttons">
+      <a href="#coaching" class="btn-primary">Book Mesi</a>
+      <a href="#origin" class="btn-outline">Explore Her Vision</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-img-placeholder">
+      <div class="hero-img-frame">
+        <img src="IMG_1419.png" alt="Meseret Haileyesus">
+      </div>
+    </div>
+  </div>
+  <div class="gold-line"></div>
+</section>
+
+<!-- ORIGIN -->
+<section id="origin">
+  <div class="origin-inner">
+    <div class="origin-left reveal">
+      <p class="section-label">The Origin</p>
+      <h2>Why Mesi<br>Does This<br>Work</h2>
+      <div class="gold-bar"></div>
+      <blockquote>"I wanted to ensure that other women would not have to struggle silently through the same barriers."</blockquote>
+    </div>
+    <div class="origin-right reveal">
+      <p>For more than two decades, Mesi has worked at the point where policy becomes lived reality. Trained in <strong>maternal health and HIV/AIDS</strong> across East Africa, she witnessed systems failing women in ways that were treated as inevitable.</p>
+      <p>When she arrived in Canada, she recognised the same failures — less visible, but no less structural. The institutions were different. The silence was the same.</p>
+      <p>She was among the first to <strong>name economic abuse as a policy issue</strong>, bringing it into national conversation and onto parliamentary record — before anyone had given it a name, before any framework existed to hold it.</p>
+      <p>She works on a simple premise: <strong>economic harm is not accidental. It is designed — and it can be redesigned.</strong> That belief has taken her from community health work to the floors of Parliament, to the IMF, the UN, and 85+ heads of state.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT NUMBERS -->
+<section id="impact">
+  <div class="impact-inner reveal">
+    <p class="section-label">Proof of Scale</p>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">2M+</span>
+        <p class="stat-label">Women Reached</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">85+</span>
+        <p class="stat-label">Heads of State Engaged</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$100M</span>
+        <p class="stat-label">Raised</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">50+</span>
+        <p class="stat-label">Keynotes Across 15+ Countries</p>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">25</span>
+        <p class="stat-label">Global Awards & Recognitions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION -->
+<section id="recognition">
+  <div class="recognition-inner reveal">
+    <p>As Featured In &amp; Recognised By</p>
+    <div class="logos-row">
+      <span class="logo-badge">Forbes</span>
+      <span class="logo-badge">CBC</span>
+      <span class="logo-badge">Globe & Mail</span>
+      <span class="logo-badge">Women of Influence</span>
+      <span class="logo-badge">Governor General's Award</span>
+      <span class="logo-badge">UN</span>
+      <span class="logo-badge">IMF</span>
+      <span class="logo-badge">Parliament of Canada</span>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="manifesto-inner reveal">
+    <p class="section-label">What Mesi Believes</p>
+    <h2>A short manifesto on systems, power, and change.</h2>
+    <div class="manifesto-statements">
+      <div class="manifesto-item">
+        <span class="manifesto-num">01</span>
+        <p class="manifesto-text">Economic harm is never accidental. Every system that fails women was <em>designed by someone</em> — and it can be redesigned.</p>
+      </div>
+      <div class="manifesto-item">
+        <span class="manifesto-num">02</span>
+        <p class="manifesto-text">Real leadership does not come from pretending to be strong. It comes from <em>being honest about the journey</em>.</p>
+      </div>
+      <div class="manifesto-item">
+        <span class="manifesto-num">03</span>
+        <p class="manifesto-text">Vulnerability is not something to hide. It is <em>a source of clarity and connection</em> — and it belongs in policy rooms.</p>
+      </div>
+      <div class="manifesto-item">
+        <span class="manifesto-num">04</span>
+        <p class="manifesto-text">No woman should have to name her own oppression alone. That is what <em>policy is for</em>. That is what this work is for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <div>
+        <p class="section-label">How Mesi Can Help</p>
+        <h2>Work<br>With<br>Mesi</h2>
+      </div>
+      <p>Whether you are leading an institution, designing a policy, or navigating complex systems change — Mesi brings strategic clarity and decades of lived, global experience to the work you are already doing.</p>
+    </div>
+    <div class="services-tracks reveal">
+      <div class="track">
+        <div class="track-icon">◈</div>
+        <p class="track-for">For Leaders &amp; Executives</p>
+        <h3 class="track-title">You need a strategic partner who understands the human cost of systems failure.</h3>
+        <p class="track-desc">Advisory, governance, and executive counsel for leaders ready to build institutions that actually serve women.</p>
+        <ul class="track-items">
+          <li class="track-item">Executive Advisory</li>
+          <li class="track-item">Board Governance</li>
+          <li class="track-item">Strategic Briefings</li>
+          <li class="track-item">Organizational Design</li>
+        </ul>
+      </div>
+      <div class="track">
+        <div class="track-icon">◉</div>
+        <p class="track-for">For Institutions &amp; Governments</p>
+        <h3 class="track-title">You are building policy. Mesi helps you build it so it holds.</h3>
+        <p class="track-desc">Policy strategy, institutional design, and systems change for governments and multilateral bodies.</p>
+        <ul class="track-items">
+          <li class="track-item">Policy Strategy</li>
+          <li class="track-item">Institutional Design</li>
+          <li class="track-item">Legislative Advisory</li>
+          <li class="track-item">Systems Change Frameworks</li>
+        </ul>
+      </div>
+      <div class="track">
+        <div class="track-icon">◇</div>
+        <p class="track-for">For Global Forums</p>
+        <h3 class="track-title">Your audience needs to feel the urgency — not just understand it.</h3>
+        <p class="track-desc">Keynotes, strategic dialogue, and global engagement for conferences, summits, and institutions.</p>
+        <ul class="track-items">
+          <li class="track-item">Keynote Speaking</li>
+          <li class="track-item">Strategic Dialogue Facilitation</li>
+          <li class="track-item">Global Forum Engagement</li>
+          <li class="track-item">Panel Moderation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING BOOKING -->
+<section id="coaching">
+  <div class="coaching-inner">
+    <div class="coaching-left reveal">
+      <p class="section-label">Coaching &amp; Mentorship</p>
+      <h2>Work Directly<br>With Mesi</h2>
+      <p>Mesi offers a limited number of one-on-one coaching engagements for women leaders navigating systems, building movements, or preparing to step into high-stakes spaces.</p>
+      <p>Each engagement is tailored to where you are and where you are going — grounded in strategy, fuelled by your own vision.</p>
+
+      <div class="coaching-packages">
+        <div class="package">
+          <div class="package-info">
+            <p class="package-name">Discovery Session</p>
+            <p class="package-desc">60-minute strategy conversation — one clear challenge, one clear path forward</p>
+          </div>
+          <p class="package-price">1 Session</p>
+        </div>
+        <div class="package">
+          <div class="package-info">
+            <p class="package-name">Leadership Accelerator</p>
+            <p class="package-desc">4-session intensive — ideal for emerging leaders at a pivotal moment</p>
+          </div>
+          <p class="package-price">4 Sessions</p>
+        </div>
+        <div class="package">
+          <div class="package-info">
+            <p class="package-name">Strategic Partnership</p>
+            <p class="package-desc">Ongoing advisory — for leaders building something that matters over time</p>
+          </div>
+          <p class="package-price">Ongoing</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-form reveal">
+      <h3>Book a Session with Mesi</h3>
+      <p>All enquiries are reviewed personally. You will hear back within 48 hours.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Your first name">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Your last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Organisation / Role</label>
+        <input type="text" placeholder="Where are you building from?">
+      </div>
+      <div class="form-group">
+        <label>Type of Engagement</label>
+        <select>
+          <option value="">Select a coaching package</option>
+          <option>Discovery Session (60 min)</option>
+          <option>Leadership Accelerator (4 sessions)</option>
+          <option>Strategic Partnership (ongoing)</option>
+          <option>Speaking Enquiry</option>
+          <option>Policy Advisory</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell Mesi About Your Work</label>
+        <textarea placeholder="What are you navigating? What do you need?"></textarea>
+      </div>
+      <button class="form-submit" onclick="handleBooking(this)">Submit Enquiry →</button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-inner reveal">
+    <p class="section-label">What Others Say</p>
+    <h2>Voices of Credibility</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <span class="t-mark">"</span>
+        <p class="t-quote">Meseret brings an extraordinary combination of policy expertise and human depth. She does not just understand these systems — she has lived the consequences of them, and that changes everything about how she works to redesign them.</p>
+        <div class="t-divider"></div>
+        <p class="t-name">Head of State / Minister</p>
+        <p class="t-title">Government Representative — Add attributed quote here</p>
+      </div>
+      <div class="testimonial-card">
+        <span class="t-mark">"</span>
+        <p class="t-quote">In rooms where economic policy meets lived experience, Mesi is one of the few voices that can hold both truths at once. Her ability to translate complexity into clarity is genuinely rare.</p>
+        <div class="t-divider"></div>
+        <p class="t-name">Multilateral Institution Leader</p>
+        <p class="t-title">UN / IMF / World Bank Representative — Add quote here</p>
+      </div>
+      <div class="testimonial-card">
+        <span class="t-mark">"</span>
+        <p class="t-quote">Working with Mesi changed how our institution understood economic abuse — not as a social issue, but as a structural one. That reframe alone shifted three years of stalled policy conversation into action within months.</p>
+        <div class="t-divider"></div>
+        <p class="t-name">Foundation / Financial Institution Lead</p>
+        <p class="t-title">Major Foundation or Bank — Add attributed quote here</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header reveal">
+      <div>
+        <p class="section-label">Moments &amp; Milestones</p>
+        <h2>In The Field</h2>
+      </div>
+      <a href="#">View Full Gallery →</a>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <div class="gallery-img-ph">
+          <p class="gallery-ph-text">Feature image<br>Portrait / Keynote moment</p>
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <span>Keynote</span>
+            UN Commission on the Status of Women, 2025
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-ph">
+          <p class="gallery-ph-text">Parliament Testimony</p>
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <span>Policy</span>
+            Parliament of Canada Testimony
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-ph">
+          <p class="gallery-ph-text">Award Ceremony</p>
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <span>Recognition</span>
+            Governor General's Award
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-ph">
+          <p class="gallery-ph-text">Global Summit</p>
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <span>Global</span>
+            IMF Annual Meetings
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-img-ph">
+          <p class="gallery-ph-text">Community Work</p>
+        </div>
+        <div class="gallery-overlay">
+          <div class="gallery-caption">
+            <span>Community</span>
+            East Africa Field Work
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section id="press">
+  <div class="press-inner">
+    <div class="press-header reveal">
+      <p class="section-label">In The Press</p>
+      <h2>Coverage &amp; Media</h2>
+    </div>
+    <div class="press-grid reveal">
+      <a href="#" class="press-card">
+        <p class="press-outlet">Forbes</p>
+        <p class="press-headline">The Woman Who Named Economic Abuse Before Anyone Else Knew What to Call It</p>
+        <p class="press-link">Read Article →</p>
+      </a>
+      <a href="#" class="press-card">
+        <p class="press-outlet">Black Business Magazine</p>
+        <p class="press-headline">"I Wanted to Ensure Other Women Would Not Struggle Silently Through the Same Barriers"</p>
+        <p class="press-link">Read Article →</p>
+      </a>
+      <a href="#" class="press-card">
+        <p class="press-outlet">Globe &amp; Mail</p>
+        <p class="press-headline">How One Advocate Turned Community Health Work Into a National Policy Movement</p>
+        <p class="press-link">Read Article →</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section id="cta">
+  <div class="cta-inner reveal">
+    <span class="section-label">Let's Engage</span>
+    <h2>"If you are working on a challenge that requires understanding how systems actually operate — let's talk."</h2>
+    <p>Whether you need a keynote that shifts a room, policy counsel that holds under scrutiny, or a coaching partner who has navigated the same terrain — Mesi is ready to engage.</p>
+    <div class="cta-buttons">
+      <a href="#coaching" class="btn-primary">Book Mesi</a>
+      <a href="mailto:hello@meserethaileyesus.com" class="btn-outline">Send a Direct Message</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="nav-logo" style="color:white;">Meseret Haileyesus <span>Economic Justice Architect</span></span>
+      <p>Designing systems that ensure no woman struggles in silence. From parliamentary policy to global economic reform.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#origin">About & Origin</a>
+      <a href="#impact">Impact</a>
+      <a href="#manifesto">Vision</a>
+      <a href="#services">Services</a>
+    </div>
+    <div class="footer-col">
+      <h4>Work With Mesi</h4>
+      <a href="#coaching">Coaching</a>
+      <a href="#services">Advisory</a>
+      <a href="#services">Keynotes</a>
+      <a href="#services">Policy Work</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter / X</a>
+      <a href="mailto:hello@meserethaileyesus.com">Email Mesi</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Meseret Haileyesus. All rights reserved.</p>
+    <p>Designed with intention.</p>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Enquiry received. Mesi will be in touch within 48 hours.</div>
+
+<script>
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 60) {
+      nav.style.padding = '0.8rem 4rem';
+    } else {
+      nav.style.padding = '1.2rem 4rem';
+    }
+  });
+
+  // Booking form
+  function handleBooking(btn) {
+    const inputs = document.querySelectorAll('.booking-form input, .booking-form select, .booking-form textarea');
+    let filled = true;
+    inputs.forEach(input => {
+      if (!input.value.trim()) {
+        filled = false;
+        input.style.borderColor = 'rgba(201,168,76,0.6)';
+        setTimeout(() => input.style.borderColor = '', 2000);
+      }
+    });
+
+    if (filled) {
+      btn.textContent = 'Sent ✓';
+      btn.style.background = 'var(--teal)';
+      btn.style.color = 'white';
+      showToast();
+    }
+  }
+
+  function showToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  // Gallery hover labels
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  galleryItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.querySelector('.gallery-img-ph').style.transform = 'scale(1.04)';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.querySelector('.gallery-img-ph').style.transform = 'scale(1)';
+    });
+  });
+</script>
+</body>
+</html>
