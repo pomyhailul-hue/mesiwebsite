@@ -1245,21 +1245,65 @@
   .toast.show { opacity: 1; transform: translateY(0); }
 
   /* ── MOBILE ── */
-  @media (max-width: 900px) {
+  @@media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
+    
     .nav-links { display: none; }
-    #hero { grid-template-columns: 1fr; }
+    
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    
+    .hamburger span {
+      width: 25px;
+      height: 2px;
+      background: var(--warm-white);
+      display: block;
+      transition: all 0.3s;
+    }
+    
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--dark);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    
+    .mobile-menu.open { display: flex; }
+    
+    .mobile-menu a {
+      color: var(--warm-white);
+      text-decoration: none;
+      font-size: 1.5rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    
+    #hero { grid-template-columns: 1fr; min-height: 100vh; }
     .hero-text { padding: 8rem 2rem 3rem; }
-    .hero-image { height: 400px; }
+    .hero-image { height: 50vh; position: relative; }
+    .hero-title { font-size: 3rem; }
+    
     .origin-inner, .coaching-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .services-tracks, .testimonials-grid, .press-grid { grid-template-columns: 1fr; }
     .services-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
     .gallery-item:first-child { grid-row: auto; }
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    section { padding: 5rem 0; }
     .origin-inner, .services-inner, .coaching-inner, .testimonials-inner, .gallery-inner, .press-inner { padding: 0 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-outline { text-align: center; }
   }
 </style>
 </head>
@@ -1279,6 +1323,17 @@
     <li><a href="#press">Press</a></li>
     <li><a href="#coaching" class="nav-cta">Book Mesi</a></li>
   </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+  <span></span><span></span><span></span>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#origin" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Work</a>
+  <a href="#coaching" onclick="toggleMenu()">Coaching</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#press" onclick="toggleMenu()">Press</a>
+  <a href="#coaching" onclick="toggleMenu()">Book Mesi</a>
+</div>
 </nav>
 
 <!-- HERO -->
@@ -1757,6 +1812,8 @@
       item.querySelector('.gallery-img-ph').style.transform = 'scale(1)';
     });
   });
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
 </script>
 </body>
 </html>
